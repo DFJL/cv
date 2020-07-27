@@ -51,7 +51,7 @@ Aside
 ```{r}
 # Build interactive network of positions colored by section
 # and connected if they occurred in the same year
-#datadrivencv::build_network_logo(CV$entries_data)
+# datadrivencv::build_network_logo(CV$entries_data)
 ```
 
 
@@ -72,25 +72,22 @@ CV %>% print_contact_info()
 
 
 
-Language Skills {#skills}
+Tools Stack {#skills}
 --------------------------------------------------------------------------------
 
-```{r}
+```{r,echo=FALSE,message=FALSE,error=FALSE,warning=FALSE}
 CV %>% print_skill_bars()
+
 ```
-
-
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
 Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
-The source code is available [on github.com/nstrayer/cv](https://github.com/nstrayer/cv).
+The source code is available [on github.com/nstrayer/cv](https://github.com/DFJL/cv).
 
 Last updated on `r Sys.Date()`.
-
-
 
 Main
 ================================================================================
@@ -114,21 +111,30 @@ CV %<>% print_section('education')
 Experience summary {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
-::: aside
-```{r}
-CV %<>% print_text_block('industy_experience_aside')
-```
-:::
-
 ```{r}
 CV %<>% print_section('industry_positions')
+
 ```
 
 <!-- These breaks just force a new page so section doesnt get cut off -->
 <br>
 <br>
 <br>
+<br>
+<br>
 
+Experience summary(continue) {data-icon=suitcase}
+--------------------------------------------------------------------------------
+
+::: aside
+```{r}
+CV %<>% print_text_block('teaching_experience_aside')
+```
+:::
+
+```{r}
+CV %<>% print_section('teaching_positions')
+```
 
 Awards {data-icon=chart-line}
 --------------------------------------------------------------------------------
@@ -142,12 +148,6 @@ CV %<>% print_text_block('data_science_writing_aside')
 ```{r}
 CV %<>% print_section('data_science_writings')
 ```
-
-
-
-<br>
-<br>
-
 
 Publications and talks {data-icon=book}
 --------------------------------------------------------------------------------
