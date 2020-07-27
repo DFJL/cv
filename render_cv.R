@@ -8,25 +8,24 @@
 # To use, simply uncomment the following lines and run them once.
 # If you need to update your data delete the "ddcv_cache.rds" file and re-run
 
-# source("CV_printing_functions.R")
-# cv_data <- create_CV_object(
-#   data_location = "https://docs.google.com/spreadsheets/d/14MQICF2F8-vf8CKPF1m4lyGKO6_thG-4aSwat1e2TWc",
-#   cache_data = TRUE
-# )
+source("CV_printing_functions.r")
+ cv_data <- create_CV_object(
+   data_location = "https://docs.google.com/spreadsheets/d/1Vo3hjj47wuq1I8PDmw2Gq0UpKtvqkJJtcLTS8hlJGxw/edit?usp=sharing",
+   cache_data = TRUE)
 cache_data <- TRUE
 
 # Knit the HTML version
-rmarkdown::render("cv.rmd",
+rmarkdown::render("dfjlCv.Rmd",
                   params = list(pdf_mode = FALSE, cache_data = cache_data),
                   output_file = "index.html")
 
 
 # Knit the PDF version to temporary html location
 tmp_html_cv_loc <- fs::file_temp(ext = ".html")
-rmarkdown::render("cv.rmd",
+rmarkdown::render("dfjlCv.Rmd",
                   params = list(pdf_mode = TRUE, cache_data = cache_data),
                   output_file = tmp_html_cv_loc)
 
 # Convert to PDF using Pagedown
 pagedown::chrome_print(input = tmp_html_cv_loc,
-                       output = "strayer_cv.pdf")
+                       output = "dfjl_cv.pdf")

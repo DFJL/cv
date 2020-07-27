@@ -7,7 +7,7 @@ params:
   pdf_mode:
     value: false
   cache_data:
-    value: false
+    value: True
 output:
   pagedown::html_resume:
     css: ['dd_cv.css', 'resume']
